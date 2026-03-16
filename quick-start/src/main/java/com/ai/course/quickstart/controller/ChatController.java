@@ -23,7 +23,7 @@ public class ChatController {
      * 同步对话
      */
     @GetMapping
-    public String chat(@RequestParam(defaultValue = "你好") String message) {
+    public String chat(@RequestParam(value = "message", defaultValue = "你好") String message) {
         return chatClient.prompt()
                 .user(message)
                 .call()
@@ -33,8 +33,8 @@ public class ChatController {
     /**
      * 流式对话
      */
-    @GetMapping(value = "/stream", produces = "text/event-stream;charset=UTF-8")
-    public Flux<String> chatStream(@RequestParam(defaultValue = "你好") String message) {
+    @GetMapping(value = "/stream", produces = "text/html;charset=UTF-8")
+    public Flux<String> chatStream(@RequestParam(value = "message", defaultValue = "你好") String message) {
         return chatClient.prompt()
                 .user(message)
                 .stream()
