@@ -13,6 +13,8 @@
 
     <modules>
         <module>quick-start</module>
+        <module>chat-client</module>
+        <module>function-calling</module>
     </modules>
 
     <properties>

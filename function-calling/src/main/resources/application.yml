@@ -1,0 +1,15 @@
+spring:
+  ai:
+    dashscope:
+      api-key: ${AI_DASHSCOPE_API_KEY}
+      chat:
+        options:
+          model: deepseek-v3.1
+          temperature: 0.3    # 工具调用场景用低 temperature，让 LLM 更确定性
+
+server:
+  port: 8082
+logging:
+  level:
+    org.springframework.ai.chat.model: DEBUG
+    org.springframework.ai.tool: DEBUG
